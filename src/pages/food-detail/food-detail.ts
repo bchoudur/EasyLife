@@ -227,6 +227,9 @@ export class FoodDetailPage {
     });
   }
   
+  /**
+   * Display the graph
+   */
   showGraph(){
     $('.graph-container').css({
       'display': 'block',
