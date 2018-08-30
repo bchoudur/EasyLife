@@ -1,0 +1,4 @@
+#Mon Aug 20 00:56:26 CDT 2018
+base.0=D\:\\Users\\Brian\\Documents\\Ionic\\EasyLife\\EasyLife\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=D\:\\Users\\Brian\\Documents\\Ionic\\EasyLife\\EasyLife\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
