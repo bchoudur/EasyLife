@@ -107,7 +107,7 @@
 
   <div class="flex-container-mobile more-info">
 
-    <div class="more-info-item" *ngFor="let nutrient of foodInfoNutrients">
+    <div class="more-info-item" *ngFor="let nutrient of foodInfoNutrients" [ngStyle]="{'padding-left':nutrient.isIndented}">
       <p>{{nutrient.label}}  <span class="color">{{fixedNumber(nutrient.quantity)}}{{nutrient.unit}} - {{nutrient.dailyPercent}}%</span></p>
       <div class="progress-bar">
         <div class="inner-bar" [ngStyle]="{'width':nutrient.dailyPercent + '%'}"></div>

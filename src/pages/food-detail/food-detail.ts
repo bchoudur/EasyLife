@@ -25,7 +25,7 @@ export class FoodDetailPage {
     this.foodInfo = this.navParams.get('foodNutrition');
     console.log("NUTRITION", this.foodInfo);
     this.setNutritionAmout();
-    this.searchBasicNutrition();
+    this.addBasicNutrition();
     
     
     console.log("FIXED", this.foodInfoNutrients);
@@ -53,9 +53,25 @@ export class FoodDetailPage {
       }else{
         foodNutrition[key].dailyPercent = null;
       }
+
+      if(this.isIndented(foodNutrition[key].label)){
+        foodNutrition[key].isIndented = '15px';
+      }else{
+        foodNutrition[key].isIndented = '0px';
+      }
       this.foodInfoNutrients.push(foodNutrition[key]);
     });
     
+  }
+
+  isIndented(nutrient:any){
+    var foodIndents:string[] = ["Monounsaturated", "Polyunsaturated", "Saturated", "Trans"];
+    for(var i in foodIndents){
+      if(nutrient === foodIndents[i]){
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -99,32 +115,37 @@ export class FoodDetailPage {
   }
 
   loadChart(){
-      var carb = this.foodInfo.totalNutrients.CHOCDF.quantity;
-      var fat = this.foodInfo.totalNutrients.FAT.quantity;
-      var protien = this.foodInfo.totalNutrients.PROCNT.quantity;
-      
-      // Create the data table.
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Topping');
-      data.addColumn('number', 'Slices');
-      data.addRows([
-        ['Carb', carb],
-        ['Fat', fat],
-        ['Protein', protien],
-      ]);
+    var carb = this.foodInfo.totalNutrients.CHOCDF.quantity;
+    var fat = this.foodInfo.totalNutrients.FAT.quantity;
+    var protien = this.foodInfo.totalNutrients.PROCNT.quantity;
+    
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+      ['Carb', carb],
+      ['Fat', fat],
+      ['Protein', protien],
+    ]);
 
-      // Set chart options
-      var options = {title:'Food Composition',
-                    width:400,
-                    height:300,
-                    colors: ['#0EBBBF', '#0A8C8F', '#086E70']
-      };
+    // Set chart options
+    var options = {title:'Food Composition',
+                  width:400,
+                  height:300,
+                  colors: ['#0EBBBF', '#0A8C8F', '#086E70']
+    };
 
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('chart'));
-      chart.draw(data, options);
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart'));
+    chart.draw(data, options);
   }
-  /*
+  
+  /**
+   * Returns the nutrition quantity in the foodInfoNutrients array. It is used the for the food-detail.html for the
+   * basic food nutrition part.
+   * @param nutrition String of nutrition to be search
+   */
   searchNutrition(nutrition:string){
     for(var i = 0; i < this.foodInfoNutrients.length; i++){
       if(this.foodInfoNutrients[i].label === nutrition){
@@ -132,13 +153,13 @@ export class FoodDetailPage {
       }
     }
   }
-  */
+  
 
   /**
    * Checks if the basics nutrition are in the data base and if they ain't
    * then add them. When adding them it will just display not available.
    */
-  searchBasicNutrition(){
+  addBasicNutrition(){
     var c = 0;
     var p = 0;
     var f = 0;
