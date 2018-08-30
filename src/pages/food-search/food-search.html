@@ -1,0 +1,44 @@
+<!--
+  Generated template for the FoodSearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      <ion-title>Food Search</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="search-container">
+    <div class="col-7">
+      <input type="text" id="food-search" name="food-search" [(ngModel)]="food_search">
+    </div>
+
+    <div class="col-15">
+      <button (click)="listFoods()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="col-15">
+      <button (click)="listFoods()"><i class="fas fa-barcode"></i></button>
+    </div>
+  </div>
+  
+  <div class="search-result-container">
+    <button class="search-result" *ngFor="let food of foods" (click)="goToFoodDetailPage(food)">
+      <p>{{food.food.label}} - {{food.food.nutrients.ENERC_KCAL}} cal</p>
+      <p>{{food.food.brand}}</p>
+      <p>100 g</p>
+    </button>
+    
+  </div>
+
+</ion-content>

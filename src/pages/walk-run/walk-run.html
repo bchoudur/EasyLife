@@ -1,0 +1,81 @@
+<!--
+  Generated template for the WalkRunPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Walk / Run Trackor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div #map id="map"></div>
+
+  <div class="info-gauge-container" *ngIf="isTracking">
+    <div class="info-gauge">
+      <img src="assets/imgs/icons8-speed-128.png">
+      <p>Speed</p>
+      <h5>{{ speed }} mph</h5>
+    </div>
+    <div class="info-gauge">
+      <img src="assets/imgs/icons8-mountain-128.png">
+      <p>Altitude</p>
+      <h5>{{ altitude }} ft</h5>
+    </div>
+    <div class="info-gauge">
+      <img src="assets/imgs/icons8-trainers-128.png">
+      <p>Steps</p>
+      <h5>{{ steps }} steps</h5>
+    </div>
+    <div class="info-gauge">
+      <img src="assets/imgs/icons8-road-128.png">
+      <p>Distance</p>
+      <h5>{{ miles }} mi</h5>
+    </div>
+    <div class="info-gauge">
+      <img src="assets/imgs/icons8-fire-128.png">
+      <p>Calories</p>
+      <h5>{{ calories }} Cal</h5>
+    </div>
+    <div class="info-gauge">
+      <img src="assets/imgs/icons8-fire-128.png">
+      <p>Other</p>
+      <h5>Add</h5>
+    </div>
+  </div>
+
+  <div class="track-btn-container">
+    <button class="track-btn go" (click)="startTracking()" *ngIf="!isTracking">Go</button>
+    <button class="track-btn stop" (click)="stopTracking()" *ngIf="isTracking">Stop</button>
+    <!--<button class="track-btn resume" *ngIf="isPaused">Resume</button>
+    <button class="track-btn cancel" *ngIf="isPaused">Cancel</button>-->
+  </div>
+
+  <div class="measurement-histories">
+    
+    <h3>History</h3>
+    <ul>
+      <li *ngFor="let route of routes | async">
+        <div class="inner-history-li">
+          <p><span class="date">{{ route.date | date }}</span></p>
+        </div>
+
+        <div class="inner-history-li">
+          <button class="inner-history-btn">Details</button>
+          <button class="inner-history-btn" (click)="showHistoryRoute(route.path)">Load</button>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+
+</ion-content>

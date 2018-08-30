@@ -24,5 +24,10 @@
   "compileOnSave": false,
   "atom": {
     "rewriteTsconfig": false
-  }
+  },
+  "lib": [
+    "es6",
+    "dom",
+    "es2017.object"
+  ]
 }

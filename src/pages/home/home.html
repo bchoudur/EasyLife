@@ -1,14 +1,265 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <div class="main-progress-container">
+    
+    <div class="main-progress fitness hide-left">
+      <!--<div class="inner-progress-wrapper">-->
+        <button class="inner-progress fitness-color" (click)="showProgressOpt()">
+          <h2>5600/10000</h2>
+          <h3>Steps</h3>
+          <i class="fas fa-plus"></i>
+          <div class="inner-progress-opt">
+            <button class="inner-progress-btn fitness-color">Add Exercise</button>
+            <button class="inner-progress-btn fitness-color">Add Walk</button>
+          </div>
+        </button>
+      <!--</div>-->
+    </div>
+
+    <div class="main-progress calories show">
+        <!--<div class="inner-progress-wrapper">-->
+          <button class="inner-progress calories-color" (click)="showProgressOpt()">
+            <h2>1325/2000</h2>
+            <h3>Calories</h3>
+            <i class="fas fa-plus"></i>
+            <div class="inner-progress-opt calories-color">
+              <button class="inner-progress-btn calories-color">Add Food</button>
+              <button class="inner-progress-btn calories-color">Add Water</button>
+            </div>
+          </button>
+        <!--</div>-->
+      </div>
+
+    <div class="main-progress money hide-right">
+      <!--<div class="inner-progress-wrapper">-->
+        <button class="inner-progress money-color" (click)="showProgressOpt()">
+          <h2>$320/$500</h2>
+          <div class="inner-progress-opt">
+            <button class="inner-progress-btn">Add Food</button>
+            <button class="inner-progress-btn">Add Water</button>
+          </div>
+        </button>
+      <!--</div>-->
+    </div>
+  </div>
+  
+
+  <div class="progress-switch">
+    <div class="row-center">
+
+        <button class="progess-switch-btn" (click)="progressFitAnim()">
+            <img src="assets/imgs/icons8-exercise-128.png">
+        </button>
+
+        <button class="progess-switch-btn" (click)="progressCaloriesAnim()">
+            <img src="assets/imgs/icons8-meal-128.png">
+        </button>
+
+        <button class="progess-switch-btn" (click)="progressMoneyAnim()">
+          <img src="assets/imgs/icons8-coins-128.png">
+        </button>
+
+        <button class="progess-switch-btn exit-opt-btn calories-c" (click)="hideProgressOpt()">
+          <img src="assets/imgs/icons8-bread-128.png">
+        </button>
+    </div>
+  </div>
+
+  <div class="other-progress">
+
+    <!--CALORIE CONTAINER-->
+    <div class="calories-container">
+
+      <div class="row-center">
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-bread-128.png">
+          <p>Carbs</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+              <div class="inner-bar calories-color carbs"></div>
+          </div>
+        </div>
+          
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-olive-oil-128.png">
+          <p>Fats</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+            <div class="inner-bar calories-color fats"></div>
+          </div>
+        </div>
+          
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-thanksgiving-turkey-128.png">
+          <p>Proteins</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+            <div class="inner-bar calories-color protiens"></div>
+          </div>
+        </div>
+
+      </div><!--END OF ROW-->
+      
+      <div class="row-center">
+    
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-sodium-80.png">
+          <p>Sodium</p>
+          <p>84%</p>
+          <div class="progress-bar">
+            <div class="inner-bar calories-color sodium"></div>
+          </div>
+        </div>
+        
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-tetra-pak-128.png">
+          <p>Calcium</p>
+          <p>63%</p>
+          <div class="progress-bar">
+            <div class="inner-bar calories-color calcium"></div>
+          </div>
+        </div>
+        
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-water-glass-128.png">
+          <p>Water</p>
+          <p>5/8</p>
+          <div class="progress-bar">
+            <div class="inner-bar calories-color water"></div>
+          </div>
+        </div>
+
+      </div><!--END OF ROW-->
+    </div><!--END OF CALORIES CONTAINER-->
+
+    <!--CALORIE CONTAINER-->
+    <div class="fitness-container">
+
+      <div class="row-center">
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-stairs-120.png">
+          <p>Stairs</p>
+          <p>13</p>
+          <div class="progress-bar">
+              <div class="inner-bar fitness-color carbs"></div>
+          </div>
+        </div>
+          
+        <div class="btm-general-btn" (click)="openPage(pages[0])">
+          <img src="assets/imgs/icons8-pulse-128.png">
+          <p>Heart rate</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+            <div class="inner-bar fitness-color fats"></div>
+          </div>
+        </div>
+          
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-hypertension-128.png">
+          <p>Stress</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+            <div class="inner-bar fitness-color protiens"></div>
+          </div>
+        </div>
+
+      </div><!--END OF ROW-->
+      
+      <div class="row-center">
+    
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-exercise-128.png">
+          <p>Exercise</p>
+          <p>84%</p>
+          <div class="progress-bar">
+            <div class="inner-bar fitness-color sodium"></div>
+          </div>
+        </div>
+        
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-running-128.png">
+          <p>Run</p>
+          <p>63%</p>
+          <div class="progress-bar">
+            <div class="inner-bar fitness-color calcium"></div>
+          </div>
+        </div>
+        
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-walking-128.png">
+          <p>Walk</p>
+          <p>5/8</p>
+          <div class="progress-bar">
+            <div class="inner-bar fitness-color water"></div>
+          </div>
+        </div>
+
+      </div><!--END OF ROW-->
+    </div><!--END OF FITENSS CONTAINER-->
+
+    <div class="money-container">
+
+      <div class="row-center">
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-bank-cards-128.png">
+          <p>Credit</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+              <div class="inner-bar money-color carbs"></div>
+          </div>
+        </div>
+          
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-money-box-128.png">
+          <p>Bank</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+            <div class="inner-bar money-color fats"></div>
+          </div>
+        </div>
+          
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-check-128.png">
+          <p>Bill</p>
+          <p>132/200</p>
+          <div class="progress-bar">
+            <div class="inner-bar money-color protiens"></div>
+          </div>
+        </div>
+
+      </div><!--END OF ROW-->
+      
+      <div class="row-center">
+    
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-ingredients-128.png">
+          <p>Groceries</p>
+          <p>84%</p>
+          <div class="progress-bar">
+            <div class="inner-bar money-color sodium"></div>
+          </div>
+        </div>
+        
+        <div class="btm-general-btn">
+          <img src="assets/imgs/icons8-rent-128.png">
+          <p>Rent</p>
+          <p>63%</p>
+          <div class="progress-bar">
+            <div class="inner-bar money-color calcium"></div>
+          </div>
+        </div>
+
+      </div><!--END OF ROW-->
+    </div><!--END OF MONEY CONTAINER-->
+  </div><!--END OF OTHER PROGESS-->
 </ion-content>
