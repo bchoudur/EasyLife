@@ -15,6 +15,11 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+.background{
+    background: #F5F5F5;
+    //background: red;
+}
+
 .flex-container-mobile{
     max-width: 350px;
     margin: auto;
@@ -43,45 +48,7 @@
     }
 }
 
-.col-1{
-    width: 10%;
-    float: left;
-}
 
-.col-15{
-    width: 15%;
-    float: left;
-}
-
-.col-2{
-    width: 20%;
-    float: left;
-}
-
-.col-3{
-    width: 30%;
-    float: left;
-}
-
-.col-4{
-    width: 40%;
-    float: left;
-}
-
-.col-6{
-    width: 60%;
-    float: left;
-}
-
-.col-7{
-    width: 70%;
-    float: left;
-}
-
-.col-8{
-    width: 80%;
-    float: left;
-}
 
 .mini-nav-container{
     height: 40px;
@@ -375,4 +342,162 @@ input, select{
 .secondary-color{
     color: #075A5C;
 }
+
+/************************NEW SCSS MARKUP*******************************/
+
+/*************************BASIC THEMES*************************/
+
+select,
+input{
+    height: 40px;
+    color: #454545;
+}
+
+h1, h2, h3,h4,h5{
+    margin: 0;
+}
+
+.board{
+    background: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    //border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 5px -9px rgba(158,156,158,1);
+    -moz-box-shadow: 10px 10px 5px -9px rgba(158,156,158,1);
+    box-shadow: 10px 10px 5px -9px rgba(158,156,158,1);
+
+}
+
+.inner-board{
+    background: #0EBBBF;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.title{
+    padding-left: 10px;
+    h4{
+        line-height: 40px;
+    }
+    
+}
+
+.no-padding{
+    padding: 0;
+}
+
+/*************************Buttons*************************/
+
+.mini-btn{
+    height: 40px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background: #0EBBBF;
+    color: #fff;
+
+    &:focus{
+        background: #0B989C;
+        transition: all .3s ease-out;
+    }
+}
+
+
+/*************************GRIDS AND GUIDES*************************/
+
+.row{
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+/****NEW COLUMNS****/
+
+.col-30{
+    width: 30%;
+}
+
+.col-50{
+    width: 50%;
+}
+
+.col-70{
+    width: 70%;
+}
+
+.col-1{
+    width: 10%;
+    float: left;
+}
+
+.col-15{
+    width: 15%;
+    float: left;
+}
+
+.col-2{
+    width: 20%;
+    float: left;
+}
+
+.col-3{
+    width: 30%;
+    float: left;
+
+}
+
+.col-4{
+    width: 40%;
+    float: left;
+    //display: inline-block;
+}
+
+.col-5{
+    width: 50%;
+    float: left;
+}
+
+.col-6{
+    width: 60%;
+    float: left;
+    //display: inline-block;
+}
+
+.col-7{
+    width: 70%;
+    float: left;
+}
+
+.col-8{
+    width: 80%;
+    float: left;
+}
+
+/*************************INPUT AND FORMS*************************/
+
+.general-form{
+    .row{
+        .input-50:first-child{
+            padding-right: 5px;
+        }
+
+        .input-50:last-child{
+            padding-left: 5px;
+        }
+    }
+}
+
+.input-50{
+    width: 50%;
+    float: left;
+}
+
+.input-100{
+    width: 100%;
+}
+
+
+
+
+
+
 

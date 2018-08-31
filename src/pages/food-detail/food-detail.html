@@ -14,8 +14,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="background">
 
+  <!--
   <div class="form-section margin-btm">
     <div class="input-container-2">
       <label for="measure">Serving Size:</label>
@@ -35,13 +36,45 @@
       <option value="text">Supper</option>
     </select>
   </div>
-
+-->
   <!--
   <div class="sub-title">
     <h4>Nutrition</h4>
   </div>
   -->
 
+  <!--NEW CODE-->
+  <div class="board">
+    <div class="inner-board general-form">
+
+      <div class="row">
+        <div class="input-50">
+          <label for="measure">Serving Size:</label>
+          <select id="measure" name="measure">
+            <option value="text">Grams</option>
+          </select>
+        </div>
+
+        <div class="input-50">
+          <label for="quanity">Quanity:</label>
+          <input type="text" id="quanity" placeholder="Serving Size" name="quanity">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-100">
+          <label for="meal-type">Meal Type:</label>
+          <select id="meal-type" name="meal-type">
+            <option value="text">Lunch</option>
+            <option value="text">Supper</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--
   <div class="mini-nav-container">
     <div class="mini-nav-item">
       <h4>Nutrition</h4>
@@ -58,6 +91,31 @@
     <button class="mini-nav-btn">
       <i class="fas fa-info"></i>
     </button>
+  </div>
+  -->
+
+  <div class="board">
+    <div class="inner-board no-padding">
+      <div class="row">
+        <div class="col-30 title">
+          <h4>Nutrition</h4>
+        </div>
+        <div class="col-70">
+            <button class="mini-btn" (click)="showGeneralNutrition()">
+              <i class="fas fa-fire"></i>
+            </button>
+            <button class="mini-btn" (click)="showGraph()">
+                <i class="fas fa-chart-pie"></i>
+            </button>
+            <button class="mini-btn">
+                <i class="fas fa-tags"></i>
+            </button>
+            <button class="mini-btn">
+                <i class="fas fa-info"></i>
+            </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="info-gauge-container">
