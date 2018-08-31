@@ -383,6 +383,43 @@ h1, h2, h3,h4,h5{
     
 }
 
+.general_info_container{
+    margin-top: 20px;
+    .general_item:nth-child(3n+2){  
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .general_item:nth-child(n+4){  
+        margin-top: 15px;
+    }
+}
+
+.general_item{
+    display: inline-block;
+    width: calc((100%/3) - 10px);
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    -webkit-box-shadow: 10px 10px 5px -9px rgba(158,156,158,1);
+    -moz-box-shadow: 10px 10px 5px -9px rgba(158,156,158,1);
+    box-shadow: 10px 10px 5px -9px rgba(158,156,158,1);
+
+    img{
+        width: 64px;
+        height: 64px;
+    }
+
+    p{
+        margin: 0;
+    }
+
+    h5{
+        margin: 0;
+    }
+}
+
 .no-padding{
     padding: 0;
 }
