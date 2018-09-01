@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 424:
+/***/ 425:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeartSensorPageModule", function() { return HeartSensorPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StarterFormPageModule", function() { return StarterFormPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__heart_sensor__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__starter_form__ = __webpack_require__(69);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HeartSensorPageModule = /** @class */ (function () {
-    function HeartSensorPageModule() {
+var StarterFormPageModule = /** @class */ (function () {
+    function StarterFormPageModule() {
     }
-    HeartSensorPageModule = __decorate([
+    StarterFormPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__heart_sensor__["a" /* HeartSensorPage */],
+                __WEBPACK_IMPORTED_MODULE_2__starter_form__["a" /* StarterFormPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__heart_sensor__["a" /* HeartSensorPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__starter_form__["a" /* StarterFormPage */]),
             ],
         })
-    ], HeartSensorPageModule);
-    return HeartSensorPageModule;
+    ], StarterFormPageModule);
+    return StarterFormPageModule;
 }());
 
-//# sourceMappingURL=heart-sensor.module.js.map
+//# sourceMappingURL=starter-form.module.js.map
 
 /***/ })
 

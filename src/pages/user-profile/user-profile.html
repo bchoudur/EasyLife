@@ -1,0 +1,83 @@
+<!--
+  Generated template for the UserProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>user-profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="board mini-nav">
+    <div class="inner-board no-padding">
+      <div class="row">
+        <button class="mini-btn">
+          <i class="fas fa-fire"></i>
+        </button>
+        <button class="mini-btn">
+          <i class="fas fa-shoe-prints"></i>
+        </button>
+        <button class="mini-btn">
+          <i class="far fa-money-bill-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="food-container">
+
+    <div class="board"><!--board containing the food nutrition for a certain period of time-->
+      <div class="inner-board">
+
+        <div class="row mini-nav">
+          <button class="mini-btn">
+            Day
+          </button>
+          <button class="mini-btn">
+            Week
+          </button>
+          <button class="mini-btn">
+            Month
+          </button>
+        </div>
+
+        <h4 class="board-title">Nutrition for the day</h4>
+
+        <div class="board-container basic-nutrition">
+
+          <div class="board-item progress-item">
+            <p>Calories 378KCal</p>
+            <div class="progress-bar">
+              <div class="inner-bar" [ngStyle]="{'width':'42%'}"></div>
+            </div>
+          </div>
+
+          <div class="board-item progress-item">
+            <p>Calories 378KCal</p>
+            <div class="progress-bar">
+              <div class="inner-bar" [ngStyle]="{'width':'42%'}"></div>
+            </div>
+          </div>
+
+          <div class="board-item progress-item">
+            <p>Calories 378KCal</p>
+            <div class="progress-bar">
+              <div class="inner-bar" [ngStyle]="{'width':'42%'}"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>

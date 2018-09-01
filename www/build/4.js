@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 421:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FoodDetailPageModule", function() { return FoodDetailPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeartSensorPageModule", function() { return HeartSensorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__food_detail__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__heart_sensor__ = __webpack_require__(135);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FoodDetailPageModule = /** @class */ (function () {
-    function FoodDetailPageModule() {
+var HeartSensorPageModule = /** @class */ (function () {
+    function HeartSensorPageModule() {
     }
-    FoodDetailPageModule = __decorate([
+    HeartSensorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__food_detail__["a" /* FoodDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_2__heart_sensor__["a" /* HeartSensorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__food_detail__["a" /* FoodDetailPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__heart_sensor__["a" /* HeartSensorPage */]),
             ],
         })
-    ], FoodDetailPageModule);
-    return FoodDetailPageModule;
+    ], HeartSensorPageModule);
+    return HeartSensorPageModule;
 }());
 
-//# sourceMappingURL=food-detail.module.js.map
+//# sourceMappingURL=heart-sensor.module.js.map
 
 /***/ })
 

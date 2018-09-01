@@ -15,6 +15,7 @@ import { FoodDetailPage } from '../pages/food-detail/food-detail';
 import { FoodSearchPage } from '../pages/food-search/food-search';
 import { FoodDairyPage } from '../pages/food-dairy/food-dairy';
 import { FoodServiceProvider } from '../providers/food-service/food-service';
+import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 
 //import { StarterFormPage } from '../pages/starter-form/starter-form';
@@ -24,7 +25,7 @@ import { FoodServiceProvider } from '../providers/food-service/food-service';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = FoodDairyPage;
+  rootPage: any = UserProfilePage;
 
   pages: Array<{title: string, component: any}>;
   
@@ -41,7 +42,8 @@ export class MyApp {
       { title: 'Record Route', component: WalkRunPage},
       { title: 'Food Detail', component: FoodDetailPage},
       { title: 'Food Search', component: FoodSearchPage},
-      { title: 'Food Dairy', component: FoodDairyPage}
+      { title: 'Food Dairy', component: FoodDairyPage},
+      { title: 'Profile', component: UserProfilePage}
     ];
   }
 
