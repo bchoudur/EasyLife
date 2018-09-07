@@ -25828,23 +25828,6 @@ ion-navbar.toolbar {
   border-radius: 5000px;
 }
 
-.form-section,
-.submit-btn {
-  background: #0EBBBF;
-  padding: 15px;
-  border-radius: 10px;
-  color: #fff;
-  max-width: 350px;
-  margin: 20px auto;
-  margin-top: 0;
-}
-
-.form-section p,
-.submit-btn p {
-  margin: 0;
-  margin-bottom: 10px;
-}
-
 label {
   display: block;
   font-size: 1.2em;
@@ -25885,19 +25868,6 @@ input::placeholder, select::placeholder {
 .input-container-3 {
   display: inline-block;
   width: 32%;
-}
-
-.submit-btn {
-  text-align: center;
-  -webkit-transition: all .3s ease-in;
-  transition: all .3s ease-in;
-  font-size: 1.2em;
-  color: white;
-  width: 100%;
-}
-
-.submit-btn:focus {
-  background: #0B989C;
 }
 
 .long-btn {
@@ -26042,17 +26012,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .board {
-  background: #fff;
+  background: #0EBBBF;
   padding: 10px;
   margin-top: 20px;
   -webkit-box-shadow: 10px 10px 5px -9px #9e9c9e;
   box-shadow: 10px 10px 5px -9px #9e9c9e;
-}
-
-.inner-board {
-  background: #0EBBBF;
-  padding: 10px;
-  border-radius: 5px;
   color: #fff;
 }
 
@@ -26127,6 +26091,21 @@ h1, h2, h3, h4, h5 {
   background: #0B989C;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
+}
+
+.submit-btn {
+  background: #0EBBBF;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 350px;
+  margin: 20px auto;
+  margin-top: 0;
+}
+
+.submit-btn p {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 /*************************GRIDS AND GUIDES*************************/
@@ -26210,6 +26189,14 @@ h1, h2, h3, h4, h5 {
 .input-50 {
   width: 50%;
   float: left;
+}
+
+.input-50:first-child {
+  padding-right: 5px;
+}
+
+.input-50:last-child {
+  padding-left: 5px;
 }
 
 .input-100 {

@@ -16,6 +16,82 @@
 
 <ion-content padding>
   <form (ngSubmit)="savePersonInfo(f.value)" #f="ngForm">
+
+    <div class="board"><!--Board containing the name input-->
+      <div class="row">
+        <div class="input-100">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="first and last" name="name" ngModel>
+        </div>
+      </div>
+    </div>
+
+    <div class="board"><!--Board for basic health information-->
+      <p>(All fields require)</p>
+
+      <div class="row">
+        <div class="input-50">
+          <label for="age">Age:</label>
+          <input type="text" id="age" placeholder="years" name="age" ngModel>
+        </div>
+
+        <div class="input-50">
+          <label for="sex">Sex:</label>
+          <select id="sex" name="sex" ngModel>
+            <option value="text">male</option>
+            <option value="text">female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-50">
+          <label for="height">Height:</label>
+          <input type="text" id="height" placeholder="feet" name="feet" ngModel>
+        </div>
+
+        <div class="input-50">
+          <label for="height-s">Inches:</label>
+          <input type="text" id="height-s" placeholder="inches" name="inches" ngModel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-100">
+          <label for="weight">Weight:</label>
+          <input type="text" id="weight" placeholder="lbs" name="weight" ngModel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-100">
+          <label for="fitness">Fitness Level:</label>
+          <select id="fitness" name="exercise" ngModel>
+            <option value="text">Lightly Active - exercise/sport 1-3 times/week</option>
+            <option value="text">kg</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="board"><!--Money Board-->
+      <div class="row">
+        <div class="input-50">
+          <label for="balance">Balance:</label>
+          <input type="text" id="balance" placeholder="dollars" name="balance" ngModel>
+        </div>
+
+        <div class="input-50">
+            <label for="allowance">Allowance:</label>
+            <input type="text" id="allowance" placeholder="dollars" name="allowance" ngModel>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Save & Continue</button>
+
+
+    <!--
     <div class="form-section">
       <h3 class="form-title">Name</h3>
 
@@ -70,7 +146,8 @@
       <label for="allowance">Allowance:</label>
       <input type="text" id="allowance" placeholder="dollars" name="allowance" ngModel>
     </div>
-
+  
     <button type="submit" class="submit-btn">Save & Continue</button>
+  -->
   </form>
 </ion-content>

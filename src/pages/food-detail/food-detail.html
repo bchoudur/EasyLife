@@ -44,33 +44,29 @@
   -->
 
   <!--NEW CODE-->
-  <div class="board">
-    <div class="inner-board general-form">
-
-      <div class="row">
-        <div class="input-50">
-          <label for="measure">Serving Size:</label>
-          <select id="measure" name="measure">
-            <option value="text">Grams</option>
-          </select>
-        </div>
-
-        <div class="input-50">
-          <label for="quanity">Quanity:</label>
-          <input type="text" id="quanity" placeholder="Serving Size" name="quanity">
-        </div>
+  <div class="board"><!--Form to select serving size, type of meal, and measurement-->
+    <div class="row">
+      <div class="input-50">
+        <label for="measure">Serving Size:</label>
+        <select id="measure" name="measure">
+          <option value="text">Grams</option>
+        </select>
       </div>
 
-      <div class="row">
-        <div class="input-100">
-          <label for="meal-type">Meal Type:</label>
-          <select id="meal-type" name="meal-type">
-            <option value="text">Lunch</option>
-            <option value="text">Supper</option>
-          </select>
-        </div>
+      <div class="input-50">
+        <label for="quanity">Quanity:</label>
+        <input type="text" id="quanity" placeholder="Serving Size" name="quanity">
       </div>
+    </div>
 
+    <div class="row">
+      <div class="input-100">
+        <label for="meal-type">Meal Type:</label>
+        <select id="meal-type" name="meal-type">
+          <option value="text">Lunch</option>
+          <option value="text">Supper</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -94,26 +90,24 @@
   </div>
   -->
 
-  <div class="board">
-    <div class="inner-board no-padding">
-      <div class="row">
-        <div class="col-30 title">
-          <h4>Nutrition</h4>
-        </div>
-        <div class="col-70">
-            <button class="mini-btn" (click)="showGeneralNutrition()">
-              <i class="fas fa-fire"></i>
-            </button>
-            <button class="mini-btn" (click)="showGraph()">
-                <i class="fas fa-chart-pie"></i>
-            </button>
-            <button class="mini-btn">
-                <i class="fas fa-tags"></i>
-            </button>
-            <button class="mini-btn">
-                <i class="fas fa-info"></i>
-            </button>
-        </div>
+  <div class="board no-padding"><!--Mini navigation to switch between basic nutrition, graph, labels, and more info-->
+    <div class="row">
+      <div class="col-30 title">
+        <h4>Nutrition</h4>
+      </div>
+      <div class="col-70">
+          <button class="mini-btn" (click)="showGeneralNutrition()">
+            <i class="fas fa-fire"></i>
+          </button>
+          <button class="mini-btn" (click)="showGraph()">
+              <i class="fas fa-chart-pie"></i>
+          </button>
+          <button class="mini-btn">
+              <i class="fas fa-tags"></i>
+          </button>
+          <button class="mini-btn">
+              <i class="fas fa-info"></i>
+          </button>
       </div>
     </div>
   </div>
@@ -203,6 +197,18 @@
     -->
   </div>
 
+  <div class="board"><!--Board for basic food nutrition-->
+
+    <div class="board-item progress-item" *ngFor="let nutrient of basicNutritions" [ngStyle]="{'padding-left':nutrient.isIndented}">
+      <p>{{nutrient.label}}  <span class="color">{{fixedNumber(nutrient.quantity)}}{{nutrient.unit}} - {{nutrient.dailyPercent}}%</span></p>
+      <div class="progress-bar">
+        <div class="inner-bar" [ngStyle]="{'width':nutrient.dailyPercent + '%'}"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--
   <div class="flex-container-mobile more-info">
 
     <div class="more-info-item" *ngFor="let nutrient of foodInfoNutrients" [ngStyle]="{'padding-left':nutrient.isIndented}">
@@ -212,7 +218,7 @@
       </div>
     </div>
   </div>
-
+  -->
   <button class="long-btn" (click)="save_nutrition()">Save</button>
   <button class="long-btn" (click)="check_data()">Check</button>
   

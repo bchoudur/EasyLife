@@ -17,6 +17,10 @@ export class FoodDetailPage {
 
   foodInfoNutrients: any[] = [];
   foodInfoNutrientsPercent: any[] = [];
+
+  basicNutritions: any[] = [];
+  moreNutritions: any[] = [];
+
   calories: any;
 
   foodInfoNutrientIndex: number;
@@ -24,10 +28,11 @@ export class FoodDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
     this.foodInfo = this.navParams.get('foodNutrition');
     console.log("NUTRITION", this.foodInfo);
-    this.setNutritionAmout();
+    this.setNutritionArray();
     this.addBasicNutrition();
-    
-    
+    this.setBasicNutritionArray();
+
+    console.log("Basics", this.basicNutritions);
     console.log("FIXED", this.foodInfoNutrients);
     console.log("PERCENT", this.foodInfoNutrientsPercent);
     
@@ -43,9 +48,9 @@ export class FoodDetailPage {
    * Loops though the object recieve from the post method in search-page and
    * grabs the quantity to fills the array foodInfoNutrients
    */
-  setNutritionAmout(){
+  setNutritionArray(){
     var foodNutrition = this.foodInfo.totalNutrients;
-    this.setPercentNutritionAmount();
+    this.setPercentNutritionArray();
 
     Object.keys(foodNutrition).forEach(key => {
       if(this.searchAvaiblePercents(foodNutrition[key].label)){
@@ -65,7 +70,7 @@ export class FoodDetailPage {
   }
 
   isIndented(nutrient:any){
-    var foodIndents:string[] = ["Monounsaturated", "Polyunsaturated", "Saturated", "Trans"];
+    var foodIndents:string[] = ["Monounsaturated", "Polyunsaturated", "Saturated", "Trans", "Sugars", "Fiber"];
     for(var i in foodIndents){
       if(nutrient === foodIndents[i]){
         return true;
@@ -78,7 +83,7 @@ export class FoodDetailPage {
    * Loops though the object recieve from the post method in search-page and
    * grabs the daily percents to fills the array foodInfoNutrientsPercent
    */
-  setPercentNutritionAmount(){
+  setPercentNutritionArray(){
     var foodNutrientPercent = this.foodInfo.totalDaily;
 
     Object.keys(foodNutrientPercent).forEach(key =>{
@@ -100,6 +105,19 @@ export class FoodDetailPage {
       }
     }
     return false;
+  }
+
+  setBasicNutritionArray(){
+    //var basic: any[] = ["Energy", "Carbs", "Sugars", "Fiber", "Fat", "Saturated", "Trans", "Monounsaturated","Polyunsaturated", "Protein", "Sodium"];
+    var basic: any[] = ["Energy", "Fat", "Monounsaturated", "Saturated", "Trans", "Cholesterol", "Sodium", "Carbs", "Fiber", "Sugars", "Protein"];
+
+    for(var i in basic){
+      for(var j in this.foodInfoNutrients){
+        if(basic[i] == this.foodInfoNutrients[j].label){
+          this.basicNutritions.push(this.foodInfoNutrients[j])
+        }
+      }
+    }
   }
 
   /**
