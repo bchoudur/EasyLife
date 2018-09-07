@@ -16,6 +16,7 @@ import { FoodSearchPage } from '../pages/food-search/food-search';
 import { FoodDairyPage } from '../pages/food-dairy/food-dairy';
 import { FoodServiceProvider } from '../providers/food-service/food-service';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
+import { GoalFormPage } from '../pages/goal-form/goal-form';
 
 
 //import { StarterFormPage } from '../pages/starter-form/starter-form';
@@ -25,7 +26,7 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = StarterFormPage;
+  rootPage: any = GoalFormPage;
 
   pages: Array<{title: string, component: any}>;
   
@@ -43,7 +44,8 @@ export class MyApp {
       { title: 'Food Detail', component: FoodDetailPage},
       { title: 'Food Search', component: FoodSearchPage},
       { title: 'Food Dairy', component: FoodDairyPage},
-      { title: 'Profile', component: UserProfilePage}
+      { title: 'Profile', component: UserProfilePage},
+      { title: 'Goals', component: GoalFormPage}
     ];
   }
 

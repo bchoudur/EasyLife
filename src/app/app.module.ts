@@ -24,6 +24,7 @@ import { FoodServiceProvider } from '../providers/food-service/food-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodDairyPage } from '../pages/food-dairy/food-dairy';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
+import { GoalFormPage } from '../pages/goal-form/goal-form';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
     FoodDetailPage,
     FoodSearchPage,
     FoodDairyPage,
-    UserProfilePage
+    UserProfilePage,
+    GoalFormPage
 
   ],
   imports: [
@@ -61,6 +63,7 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
     FoodDetailPage,
     FoodSearchPage,
     FoodDairyPage,
+    GoalFormPage,
     UserProfilePage
   ],
   providers: [

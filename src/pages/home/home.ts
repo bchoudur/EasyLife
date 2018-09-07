@@ -11,8 +11,8 @@ import { HeartSensorPage } from '../heart-sensor/heart-sensor';
 })
 export class HomePage {
 
-  private persons: Promise<Person[]>
-  private person: Person
+  //private persons: Promise<Person[]>
+  //private person: Person
 
   pages: Array<{component: any}>;
 
@@ -31,14 +31,15 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-    this.persons = this.getAllPersonInfo();
+    //this.persons = this.getAllPersonInfo();
     //this.setMainProgressHeight();
   }
 
   /*******************END OF PAGES**********************/
 
   /*******************DATABASE**********************/
- 
+  
+  /*
   getPersonInfo(id: number){
     this.personService.getPersonInfo(id).then((p) => {
       this.person = p;
@@ -49,6 +50,8 @@ export class HomePage {
   getAllPersonInfo(){
     return this.personService.getAllPersonInfo();
   }
+  */
+
 
   /*******************END OF DATABASE**********************/
 

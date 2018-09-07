@@ -3,6 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { Person } from '../../models/person.model';
 import { PersonService } from '../../providers/person-service/person-service';
 import { HomePage } from '../home/home';
+import { GoalFormPage } from '../goal-form/goal-form';
 
 /**
  * Generated class for the StarterFormPage page.
@@ -23,9 +24,9 @@ export class StarterFormPage {
   constructor(public navCtrl: NavController, private personService: PersonService) {
   }
 
-  savePersonInfo(person: Person){
+  savePersonInfo(person: any){
     this.personService.savePersonInfo(person);
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(GoalFormPage);
   }
 
 }
