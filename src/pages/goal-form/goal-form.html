@@ -18,29 +18,59 @@
 
 <ion-content padding>
 
-  <form (ngSubmit)="savePersonInfo(f.value)" #f="ngForm">
+  <form (ngSubmit)="savePersonInfoGoals()">
 
     <div class="board"><!--Board containing the name input-->
 
       <div class="input-100-hl">
         <label for="l-option">Loose Weight:</label>
-        <input type="radio" id="l-options" value="loose" name="weightOptions">
+        <input type="radio" id="l-options" value="loose" name="weightOptions" ngModel>
         <div class="check"></div>
       </div>
 
       <div class="input-100-hl">
-        <label for="l-option">Maintain Weight:</label>
-        <input type="radio" id="l-options" value="loose" name="weightOptions">
+        <label for="m-option">Maintain Weight:</label>
+        <input type="radio" id="m-options" value="maintain" name="weightOptions" ngModel>
         <div class="check"></div>
       </div>
 
       <div class="input-100-hl">
-        <label for="l-option">GainWeight:</label>
-        <input type="radio" id="l-options" value="loose" name="weightOptions">
+        <label for="g-option">GainWeight:</label>
+        <input type="radio" id="g-options" value="gain" name="weightOptions" ngModel>
         <div class="check"></div>
+      </div>
+
+      <h4>Percentage for food nutrients</h4>
+      <p>This is for setting what percent of each marco nutrients you want to get daily</p>
+
+      <div class="input-100-hl">
+        <label for="carb-percent">Carbs:</label>
+        <input type="range"  id="carb-percent" min='0' max='100' value='60' name="carb-percent">
+        <p id="carb-value">60%</p>
+      </div>
+
+      <div class="input-100-hl">
+        <label for="fat-percent">Fats:</label>
+        <input type="range" id="fat-percent" min='0' max='100' value='25' name="fat-percent" >
+        <p>25</p>
+      </div>
+
+      <div class="input-100-hl">
+        <label for="protien-percent">Protein:</label>
+        <input type="range" id="protien-percent" min='0' max='100' value='15' name="protien-percent" >
+        <p>15</p>
       </div>
 
     </div>
+
+    <div class="board">
+      <div class="input-100">
+        <label for="step-count">Numbers of steps per day:</label>
+        <input type="number" id="step-count" placeholder="10000" value="10000" name="step-count" ngModel>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Save & Continue</button>
 
   </form>
 </ion-content>

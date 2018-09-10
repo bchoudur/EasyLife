@@ -11,15 +11,14 @@ import { Person } from '../../models/person.model';
 @Injectable()
 export class PersonService {
 
-  private persons: any[] = [];
-  private person: any;
+  private persons: Person[] = [];
+  private person: Person;
 
   constructor(public storage: Storage) {
   }
   
   
-  savePersonInfo(person: any){
-    person.id = Date.now();
+  savePersonInfo(person: Person){
     //this.persons.push(person);
     this.persons[0] = person;
     this.storage.set('persons', this.persons);

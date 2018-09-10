@@ -332,6 +332,7 @@ input[type=radio]{
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    margin-left: 10px;
     //text-align: left;
 }
 
@@ -341,6 +342,7 @@ input[type=radio]{
     color: #0B989C;
     width: 25px;
     transition: all .3s ease-out;
+    margin-left: 10px;
 }
 
 input:checked ~ .check {
@@ -464,6 +466,12 @@ h1, h2, h3,h4,h5{
 .row{
     flex-wrap: nowrap;
     justify-content: space-evenly;
+}
+
+.row-l{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
 /****NEW COLUMNS****/

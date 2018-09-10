@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PersonService } from '../../providers/person-service/person-service';
 
 /**
  * Generated class for the UserProfilePage page.
@@ -15,11 +16,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  name: any;
+  age: any;
+  height_ft: any;
+  height_in: any;
+  weight: any;
+  sex: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private personService: PersonService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserProfilePage');
+    this.setPersonInfo();
   }
+
+  setPersonInfo(){
+    this.personService.getPersonInfo().then(personData => {
+      this.name = personData.name;
+      this.age = personData.age;
+      this.height_ft = personData.height_ft;
+      this.height_in = personData.height_in;
+      this.weight = personData.weight;
+      this.sex = personData.sex;
+    });
+  }
+
+
 
 }

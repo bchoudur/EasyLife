@@ -6,28 +6,60 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>user-profile</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>User Profile</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="background">
 
-  <div class="board mini-nav">
-    <div class="inner-board no-padding">
-      <div class="row">
-        <button class="mini-btn">
-          <i class="fas fa-fire"></i>
-        </button>
-        <button class="mini-btn">
-          <i class="fas fa-shoe-prints"></i>
-        </button>
-        <button class="mini-btn">
-          <i class="far fa-money-bill-alt"></i>
-        </button>
+  <div class="board"><!--Board containing basic information-->
+
+    <h4 class="board-title">Basic Information</h4>
+
+    <div class="row">
+      <div class="col-50"><!--col for right side of information-->
+        <div class="row-l">
+          <p>Name: {{name}}</p>
+        </div>
+        <div class="row-l">
+          <p>Height: {{height_ft}}'{{height_in}}</p>
+        </div>
+        <div class="row-l">
+          <p>Weight: {{weight}}</p>
+        </div>
       </div>
+
+      <div class="col-50"><!--col for left side of information-->
+        <div class="row-l">
+          <p>Sex: {{sex}}</p>
+        </div>
+        <div class="row-l">
+          <p>Height: 25</p>
+        </div>
+        <div class="row-l">
+          <p>Sex: 25</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="board mini-nav no-padding">
+    <div class="row">
+      <button class="mini-btn">
+        <i class="fas fa-fire"></i>
+      </button>
+      <button class="mini-btn">
+        <i class="fas fa-shoe-prints"></i>
+      </button>
+      <button class="mini-btn">
+        <i class="far fa-money-bill-alt"></i>
+      </button>
     </div>
   </div>
 

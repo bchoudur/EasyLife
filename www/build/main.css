@@ -26011,6 +26011,7 @@ input[type=radio] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .check {
@@ -26020,6 +26021,7 @@ input[type=radio] {
   width: 25px;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
+  margin-left: 10px;
 }
 
 input:checked ~ .check {
@@ -26144,6 +26146,20 @@ h1, h2, h3, h4, h5 {
   -webkit-justify-content: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+}
+
+.row-l {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 /****NEW COLUMNS****/
