@@ -26043,10 +26043,12 @@ h1, h2, h3, h4, h5 {
 .board {
   background: #0EBBBF;
   padding: 10px;
+  margin: auto;
   margin-top: 20px;
   -webkit-box-shadow: 10px 10px 5px -9px #9e9c9e;
   box-shadow: 10px 10px 5px -9px #9e9c9e;
   color: #fff;
+  max-width: 400px;
 }
 
 .title {

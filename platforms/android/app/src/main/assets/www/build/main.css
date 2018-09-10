@@ -25679,6 +25679,10 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.background {
+  background: #F5F5F5;
+}
+
 .flex-container-mobile {
   max-width: 350px;
   margin: auto;
@@ -25713,46 +25717,6 @@ ion-navbar.toolbar {
   padding-bottom: 5px;
   margin: 0;
   color: #fff;
-}
-
-.col-1 {
-  width: 10%;
-  float: left;
-}
-
-.col-15 {
-  width: 15%;
-  float: left;
-}
-
-.col-2 {
-  width: 20%;
-  float: left;
-}
-
-.col-3 {
-  width: 30%;
-  float: left;
-}
-
-.col-4 {
-  width: 40%;
-  float: left;
-}
-
-.col-6 {
-  width: 60%;
-  float: left;
-}
-
-.col-7 {
-  width: 70%;
-  float: left;
-}
-
-.col-8 {
-  width: 80%;
-  float: left;
 }
 
 .mini-nav-container {
@@ -25864,23 +25828,6 @@ ion-navbar.toolbar {
   border-radius: 5000px;
 }
 
-.form-section,
-.submit-btn {
-  background: #0EBBBF;
-  padding: 15px;
-  border-radius: 10px;
-  color: #fff;
-  max-width: 350px;
-  margin: 20px auto;
-  margin-top: 0;
-}
-
-.form-section p,
-.submit-btn p {
-  margin: 0;
-  margin-bottom: 10px;
-}
-
 label {
   display: block;
   font-size: 1.2em;
@@ -25921,19 +25868,6 @@ input::placeholder, select::placeholder {
 .input-container-3 {
   display: inline-block;
   width: 32%;
-}
-
-.submit-btn {
-  text-align: center;
-  -webkit-transition: all .3s ease-in;
-  transition: all .3s ease-in;
-  font-size: 1.2em;
-  color: white;
-  width: 100%;
-}
-
-.submit-btn:focus {
-  background: #0B989C;
 }
 
 .long-btn {
@@ -26063,6 +25997,278 @@ input::placeholder, select::placeholder {
 
 .secondary-color {
   color: #075A5C;
+}
+
+/************************NEW SCSS MARKUP*******************************/
+/*************************BASIC THEMES*************************/
+select,
+input {
+  height: 40px;
+  color: #454545;
+}
+
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.check {
+  height: 25px;
+  background: #0B989C;
+  color: #0B989C;
+  width: 25px;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  margin-left: 10px;
+}
+
+input:checked ~ .check {
+  width: 50px;
+  height: 25px;
+  background-color: #075A5C;
+}
+
+.check::before {
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+.board {
+  background: #0EBBBF;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  -webkit-box-shadow: 10px 10px 5px -9px #9e9c9e;
+  box-shadow: 10px 10px 5px -9px #9e9c9e;
+  color: #fff;
+  max-width: 400px;
+}
+
+.title {
+  padding-left: 10px;
+}
+
+.title h4 {
+  line-height: 40px;
+}
+
+.general_info_container {
+  margin-top: 20px;
+}
+
+.general_info_container .general_item:nth-child(3n+2) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.general_info_container .general_item:nth-child(n+4) {
+  margin-top: 15px;
+}
+
+.general_item {
+  display: inline-block;
+  width: calc((100%/3) - 10px);
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  -webkit-box-shadow: 10px 10px 5px -9px #9e9c9e;
+  box-shadow: 10px 10px 5px -9px #9e9c9e;
+}
+
+.general_item img {
+  width: 64px;
+  height: 64px;
+}
+
+.general_item p {
+  margin: 0;
+}
+
+.general_item h5 {
+  margin: 0;
+}
+
+.progress-item {
+  margin: 10px 0 15px 0;
+}
+
+.progress-item p {
+  padding: 0;
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+/*************************Buttons*************************/
+.mini-btn {
+  height: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: #0EBBBF;
+  color: #fff;
+}
+
+.mini-btn:focus {
+  background: #0B989C;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.submit-btn {
+  background: #0EBBBF;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 350px;
+  margin: 20px auto;
+  margin-top: 0;
+}
+
+.submit-btn p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/*************************GRIDS AND GUIDES*************************/
+.row {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.row-l {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+/****NEW COLUMNS****/
+.col-30 {
+  width: 30%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.col-1 {
+  width: 10%;
+  float: left;
+}
+
+.col-15 {
+  width: 15%;
+  float: left;
+}
+
+.col-2 {
+  width: 20%;
+  float: left;
+}
+
+.col-3 {
+  width: 30%;
+  float: left;
+}
+
+.col-4 {
+  width: 40%;
+  float: left;
+}
+
+.col-5 {
+  width: 50%;
+  float: left;
+}
+
+.col-6 {
+  width: 60%;
+  float: left;
+}
+
+.col-7 {
+  width: 70%;
+  float: left;
+}
+
+.col-8 {
+  width: 80%;
+  float: left;
+}
+
+.margin-btm {
+  margin-bottom: 10px;
+}
+
+/*************************INPUT AND FORMS*************************/
+.general-form .row .input-50:first-child {
+  padding-right: 5px;
+}
+
+.general-form .row .input-50:last-child {
+  padding-left: 5px;
+}
+
+.input-50 {
+  width: 50%;
+  float: left;
+}
+
+.input-50:first-child {
+  padding-right: 5px;
+}
+
+.input-50:last-child {
+  padding-left: 5px;
+}
+
+.input-100 {
+  width: 100%;
+}
+
+.input-100-hl {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: flex-start;
+  -ms-flex-flow: flex-start;
+  flex-flow: flex-start;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input-100-hl label {
+  width: 130px;
 }
 
 page-food-detail .color {

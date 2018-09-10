@@ -288,6 +288,7 @@ var HeartSensorPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -299,6 +300,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the UserProfilePage page.
  *
@@ -306,18 +308,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var UserProfilePage = /** @class */ (function () {
-    function UserProfilePage(navCtrl, navParams) {
+    function UserProfilePage(navCtrl, navParams, personService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.personService = personService;
     }
     UserProfilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad UserProfilePage');
+        this.setPersonInfo();
+    };
+    UserProfilePage.prototype.setPersonInfo = function () {
+        var _this = this;
+        this.personService.getPersonInfo().then(function (personData) {
+            _this.name = personData.name;
+            _this.age = personData.age;
+            _this.height_ft = personData.height_ft;
+            _this.height_in = personData.height_in;
+            _this.weight = personData.weight;
+            _this.sex = personData.sex;
+        });
     };
     UserProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-user-profile',template:/*ion-inline-start:"D:\Users\Brian\Documents\Ionic\EasyLife\EasyLife\src\pages\user-profile\user-profile.html"*/'<!--\n\n  Generated template for the UserProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>User Profile</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="background">\n\n\n\n  <div class="board"><!--Board containing basic information-->\n\n\n\n    <h4 class="board-title">Basic Information</h4>\n\n\n\n    <div class="row">\n\n      <div class="col-50"><!--col for right side of information-->\n\n        <div class="row-l">\n\n          <p>Name: {{name}}</p>\n\n        </div>\n\n        <div class="row-l">\n\n          <p>Height: {{height_ft}}\'{{height_in}}</p>\n\n        </div>\n\n        <div class="row-l">\n\n          <p>Weight: {{weight}}</p>\n\n        </div>\n\n      </div>\n\n\n\n      <div class="col-50"><!--col for left side of information-->\n\n        <div class="row-l">\n\n          <p>Sex: {{sex}}</p>\n\n        </div>\n\n        <div class="row-l">\n\n          <p>Height: 25</p>\n\n        </div>\n\n        <div class="row-l">\n\n          <p>Sex: 25</p>\n\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n\n\n  <div class="board mini-nav no-padding">\n\n    <div class="row">\n\n      <button class="mini-btn">\n\n        <i class="fas fa-fire"></i>\n\n      </button>\n\n      <button class="mini-btn">\n\n        <i class="fas fa-shoe-prints"></i>\n\n      </button>\n\n      <button class="mini-btn">\n\n        <i class="far fa-money-bill-alt"></i>\n\n      </button>\n\n    </div>\n\n  </div>\n\n\n\n  <div class="food-container">\n\n\n\n    <div class="board"><!--board containing the food nutrition for a certain period of time-->\n\n      <div class="inner-board">\n\n\n\n        <div class="row mini-nav">\n\n          <button class="mini-btn">\n\n            Day\n\n          </button>\n\n          <button class="mini-btn">\n\n            Week\n\n          </button>\n\n          <button class="mini-btn">\n\n            Month\n\n          </button>\n\n        </div>\n\n\n\n        <h4 class="board-title">Nutrition for the day</h4>\n\n\n\n        <div class="board-container basic-nutrition">\n\n\n\n          <div class="board-item progress-item">\n\n            <p>Calories 378KCal</p>\n\n            <div class="progress-bar">\n\n              <div class="inner-bar" [ngStyle]="{\'width\':\'42%\'}"></div>\n\n            </div>\n\n          </div>\n\n\n\n          <div class="board-item progress-item">\n\n            <p>Calories 378KCal</p>\n\n            <div class="progress-bar">\n\n              <div class="inner-bar" [ngStyle]="{\'width\':\'42%\'}"></div>\n\n            </div>\n\n          </div>\n\n\n\n          <div class="board-item progress-item">\n\n            <p>Calories 378KCal</p>\n\n            <div class="progress-bar">\n\n              <div class="inner-bar" [ngStyle]="{\'width\':\'42%\'}"></div>\n\n            </div>\n\n          </div>\n\n\n\n        </div>\n\n\n\n\n\n      </div>\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Users\Brian\Documents\Ionic\EasyLife\EasyLife\src\pages\user-profile\user-profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__["a" /* PersonService */]])
     ], UserProfilePage);
     return UserProfilePage;
 }());
@@ -476,7 +490,7 @@ var WalkRunPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__starter_form_starter_form__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__starter_form_starter_form__ = __webpack_require__(71);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -551,15 +565,15 @@ var map = {
 		6
 	],
 	"../pages/goal-form/goal-form.module": [
-		425,
+		426,
 		5
 	],
 	"../pages/heart-sensor/heart-sensor.module": [
-		426,
+		427,
 		4
 	],
 	"../pages/starter-form/starter-form.module": [
-		427,
+		425,
 		3
 	],
 	"../pages/starter/starter.module": [
@@ -650,8 +664,8 @@ var FitnessServerProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__heart_sensor_heart_sensor__ = __webpack_require__(136);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -934,8 +948,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(414);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_starter_starter__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_starter_form_starter_form__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_person_service_person_service__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_starter_form_starter_form__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_person_service_person_service__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_add_food_add_food__ = __webpack_require__(134);
@@ -950,7 +964,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common_http__ = __webpack_require__(419);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_food_dairy_food_dairy__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_goal_form_goal_form__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_goal_form_goal_form__ = __webpack_require__(72);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1009,9 +1023,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/add-food/add-food.module#AddFoodPageModule', name: 'AddFoodPage', segment: 'add-food', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food-dairy/food-dairy.module#FoodDairyPageModule', name: 'FoodDairyPage', segment: 'food-dairy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food-detail/food-detail.module#FoodDetailPageModule', name: 'FoodDetailPage', segment: 'food-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/starter-form/starter-form.module#StarterFormPageModule', name: 'StarterFormPage', segment: 'starter-form', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/goal-form/goal-form.module#GoalFormPageModule', name: 'GoalFormPage', segment: 'goal-form', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/heart-sensor/heart-sensor.module#HeartSensorPageModule', name: 'HeartSensorPage', segment: 'heart-sensor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/starter-form/starter-form.module#StarterFormPageModule', name: 'StarterFormPage', segment: 'starter-form', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-profile/user-profile.module#UserProfilePageModule', name: 'UserProfilePage', segment: 'user-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/walk-run/walk-run.module#WalkRunPageModule', name: 'WalkRunPage', segment: 'walk-run', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/starter/starter.module#StarterPageModule', name: 'StarterPage', segment: 'starter', priority: 'low', defaultHistory: [] }
@@ -1067,7 +1081,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_starter_starter__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_starter_form_starter_form__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_starter_form_starter_form__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_add_food_add_food__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_walk_run_walk_run__ = __webpack_require__(138);
@@ -1076,7 +1090,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_food_dairy_food_dairy__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_food_service_food_service__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_user_profile_user_profile__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_goal_form_goal_form__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_goal_form_goal_form__ = __webpack_require__(72);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1157,7 +1171,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 61:
+/***/ 52:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1231,7 +1245,7 @@ var PersonService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1502,86 +1516,12 @@ var FoodDetailPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoalFormPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the GoalFormPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var GoalFormPage = /** @class */ (function () {
-    function GoalFormPage(navCtrl, navParams, personService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.personService = personService;
-        this.carbSliderValue = 60;
-        //this.savePersonInfoGoals();
-    }
-    GoalFormPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad GoalFormPage');
-        this.updateCarbSlider();
-    };
-    GoalFormPage.prototype.savePersonInfoGoals = function () {
-        var _this = this;
-        this.personService.getPersonInfo().then(function (personData) {
-            personData.weight_goal = __WEBPACK_IMPORTED_MODULE_3_jquery__("input[name=weightOptions]:checked").val();
-            personData.carb_percent = __WEBPACK_IMPORTED_MODULE_3_jquery__("#carb-percent").val();
-            personData.fat_percent = __WEBPACK_IMPORTED_MODULE_3_jquery__("#fat-percent").val();
-            personData.protein_percent = __WEBPACK_IMPORTED_MODULE_3_jquery__("#protien-percent").val();
-            personData.step_count_goal = __WEBPACK_IMPORTED_MODULE_3_jquery__("#step-count").val();
-            _this.personService.savePersonInfo(personData);
-        });
-        //this.personService.savePersonInfo(person);
-        // /this.navCtrl.push(UserProfilePage);
-    };
-    GoalFormPage.prototype.updateCarbSlider = function () {
-        __WEBPACK_IMPORTED_MODULE_3_jquery__('#carb-percent').on('input', function () {
-            var val = __WEBPACK_IMPORTED_MODULE_3_jquery__(this).val();
-            __WEBPACK_IMPORTED_MODULE_3_jquery__('#carb-value').text(val + '%');
-        });
-    };
-    GoalFormPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-goal-form',template:/*ion-inline-start:"D:\Users\Brian\Documents\Ionic\EasyLife\EasyLife\src\pages\goal-form\goal-form.html"*/'<!--\n  Generated template for the GoalFormPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Home</ion-title>\n      </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <form (ngSubmit)="savePersonInfoGoals()">\n\n    <div class="board"><!--Board containing the name input-->\n\n      <div class="input-100-hl">\n        <label for="l-option">Loose Weight:</label>\n        <input type="radio" id="l-options" value="loose" name="weightOptions" ngModel>\n        <div class="check"></div>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="m-option">Maintain Weight:</label>\n        <input type="radio" id="m-options" value="maintain" name="weightOptions" ngModel>\n        <div class="check"></div>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="g-option">GainWeight:</label>\n        <input type="radio" id="g-options" value="gain" name="weightOptions" ngModel>\n        <div class="check"></div>\n      </div>\n\n      <h4>Percentage for food nutrients</h4>\n      <p>This is for setting what percent of each marco nutrients you want to get daily</p>\n\n      <div class="input-100-hl">\n        <label for="carb-percent">Carbs:</label>\n        <input type="range"  id="carb-percent" min=\'0\' max=\'100\' value=\'60\' name="carb-percent">\n        <p id="carb-value">60%</p>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="fat-percent">Fats:</label>\n        <input type="range" id="fat-percent" min=\'0\' max=\'100\' value=\'25\' name="fat-percent" >\n        <p>25</p>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="protien-percent">Protein:</label>\n        <input type="range" id="protien-percent" min=\'0\' max=\'100\' value=\'15\' name="protien-percent" >\n        <p>15</p>\n      </div>\n\n    </div>\n\n    <div class="board">\n      <div class="input-100">\n        <label for="step-count">Numbers of steps per day:</label>\n        <input type="number" id="step-count" placeholder="10000" value="10000" name="step-count" ngModel>\n      </div>\n    </div>\n\n    <button type="submit" class="submit-btn">Save & Continue</button>\n\n  </form>\n</ion-content>\n'/*ion-inline-end:"D:\Users\Brian\Documents\Ionic\EasyLife\EasyLife\src\pages\goal-form\goal-form.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__["a" /* PersonService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__["a" /* PersonService */]) === "function" && _c || Object])
-    ], GoalFormPage);
-    return GoalFormPage;
-    var _a, _b, _c;
-}());
-
-//# sourceMappingURL=goal-form.js.map
-
-/***/ }),
-
-/***/ 72:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarterFormPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__goal_form_goal_form__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__goal_form_goal_form__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1639,6 +1579,93 @@ var StarterFormPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=starter-form.js.map
+
+/***/ }),
+
+/***/ 72:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoalFormPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the GoalFormPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var GoalFormPage = /** @class */ (function () {
+    function GoalFormPage(navCtrl, navParams, personService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.personService = personService;
+        this.carbSliderValue = 60;
+        //this.savePersonInfoGoals();
+    }
+    GoalFormPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad GoalFormPage');
+        this.updateCarbSlider();
+        this.updateFatSlider();
+        this.updateProteinSlider();
+    };
+    GoalFormPage.prototype.savePersonInfoGoals = function () {
+        var _this = this;
+        this.personService.getPersonInfo().then(function (personData) {
+            personData.weight_goal = __WEBPACK_IMPORTED_MODULE_3_jquery__("input[name=weightOptions]:checked").val();
+            personData.carb_percent = __WEBPACK_IMPORTED_MODULE_3_jquery__("#carb-percent").val();
+            personData.fat_percent = __WEBPACK_IMPORTED_MODULE_3_jquery__("#fat-percent").val();
+            personData.protein_percent = __WEBPACK_IMPORTED_MODULE_3_jquery__("#protien-percent").val();
+            personData.step_count_goal = __WEBPACK_IMPORTED_MODULE_3_jquery__("#step-count").val();
+            _this.personService.savePersonInfo(personData);
+        });
+        //this.personService.savePersonInfo(person);
+        // /this.navCtrl.push(UserProfilePage);
+    };
+    GoalFormPage.prototype.updateCarbSlider = function () {
+        __WEBPACK_IMPORTED_MODULE_3_jquery__('#carb-percent').on('input', function () {
+            var val = __WEBPACK_IMPORTED_MODULE_3_jquery__(this).val();
+            __WEBPACK_IMPORTED_MODULE_3_jquery__('#carb-value').text(val + '%');
+        });
+    };
+    GoalFormPage.prototype.updateFatSlider = function () {
+        __WEBPACK_IMPORTED_MODULE_3_jquery__('#fat-percent').on('input', function () {
+            var val = __WEBPACK_IMPORTED_MODULE_3_jquery__(this).val();
+            __WEBPACK_IMPORTED_MODULE_3_jquery__('#fat-value').text(val + '%');
+        });
+    };
+    GoalFormPage.prototype.updateProteinSlider = function () {
+        __WEBPACK_IMPORTED_MODULE_3_jquery__('#protien-percent').on('input', function () {
+            var val = __WEBPACK_IMPORTED_MODULE_3_jquery__(this).val();
+            __WEBPACK_IMPORTED_MODULE_3_jquery__('#protein-value').text(val + '%');
+        });
+    };
+    GoalFormPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-goal-form',template:/*ion-inline-start:"D:\Users\Brian\Documents\Ionic\EasyLife\EasyLife\src\pages\goal-form\goal-form.html"*/'<!--\n  Generated template for the GoalFormPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Home</ion-title>\n      </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <form (ngSubmit)="savePersonInfoGoals()">\n\n    <div class="board"><!--Board containing the name input-->\n\n      <div class="input-100-hl">\n        <label for="l-option">Loose Weight:</label>\n        <input type="radio" id="l-options" value="loose" name="weightOptions" ngModel>\n        <div class="check"></div>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="m-option">Maintain Weight:</label>\n        <input type="radio" id="m-options" value="maintain" name="weightOptions" ngModel>\n        <div class="check"></div>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="g-option">GainWeight:</label>\n        <input type="radio" id="g-options" value="gain" name="weightOptions" ngModel>\n        <div class="check"></div>\n      </div>\n\n      <h4>Percentage for food nutrients</h4>\n      <p>This is for setting what percent of each marco nutrients you want to get daily</p>\n\n      <div class="input-100-hl">\n        <label for="carb-percent">Carbs:</label>\n        <input type="range"  id="carb-percent" min=\'0\' max=\'100\' value=\'60\' name="carb-percent">\n        <p id="carb-value">60%</p>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="fat-percent">Fats:</label>\n        <input type="range" id="fat-percent" min=\'0\' max=\'100\' value=\'25\' name="fat-percent" >\n        <p id="fat-value">25%</p>\n      </div>\n\n      <div class="input-100-hl">\n        <label for="protien-percent">Protein:</label>\n        <input type="range" id="protien-percent" min=\'0\' max=\'100\' value=\'15\' name="protien-percent" >\n        <p id="protein-value">15%</p>\n      </div>\n\n    </div>\n\n    <div class="board">\n      <div class="input-100">\n        <label for="step-count">Numbers of steps per day:</label>\n        <input type="number" id="step-count" placeholder="10000" value="10000" name="step-count" ngModel>\n      </div>\n    </div>\n\n    <button type="submit" class="submit-btn">Save & Continue</button>\n\n  </form>\n</ion-content>\n'/*ion-inline-end:"D:\Users\Brian\Documents\Ionic\EasyLife\EasyLife\src\pages\goal-form\goal-form.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_person_service_person_service__["a" /* PersonService */]])
+    ], GoalFormPage);
+    return GoalFormPage;
+}());
+
+//# sourceMappingURL=goal-form.js.map
 
 /***/ })
 

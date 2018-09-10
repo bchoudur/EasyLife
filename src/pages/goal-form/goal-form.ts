@@ -27,6 +27,8 @@ export class GoalFormPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GoalFormPage');
     this.updateCarbSlider();
+    this.updateFatSlider();
+    this.updateProteinSlider();
   }
 
   savePersonInfoGoals(){
@@ -49,7 +51,20 @@ export class GoalFormPage {
       var val = $(this).val();
       $('#carb-value').text(val + '%');
     })
-    
+  }
+
+  updateFatSlider(){
+    $('#fat-percent').on('input', function(){
+      var val = $(this).val();
+      $('#fat-value').text(val + '%');
+    })
+  }
+
+  updateProteinSlider(){
+    $('#protien-percent').on('input', function(){
+      var val = $(this).val();
+      $('#protein-value').text(val + '%');
+    })
   }
 
 }
