@@ -23,19 +23,19 @@
     <div class="board"><!--Board containing the name input-->
 
       <div class="input-100-hl">
-        <label for="l-option">Loose Weight:</label>
+        <label for="l-option">Loose Weight: {{dailyCalories - 500}} Cal</label>
         <input type="radio" id="l-options" value="loose" name="weightOptions" ngModel>
         <div class="check"></div>
       </div>
 
       <div class="input-100-hl">
-        <label for="m-option">Maintain Weight:</label>
+        <label for="m-option">Maintain Weight: {{dailyCalories}} Cal</label>
         <input type="radio" id="m-options" value="maintain" name="weightOptions" ngModel>
         <div class="check"></div>
       </div>
 
       <div class="input-100-hl">
-        <label for="g-option">GainWeight:</label>
+        <label for="g-option">Gain Weight: {{dailyCalories + 500}} Cal</label>
         <input type="radio" id="g-options" value="gain" name="weightOptions" ngModel>
         <div class="check"></div>
       </div>

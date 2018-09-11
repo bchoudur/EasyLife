@@ -18,7 +18,7 @@ import * as $ from 'jquery'
 })
 export class GoalFormPage {
 
-  carbSliderValue: any = 60;
+  dailyCalories: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private personService: PersonService) {
     //this.savePersonInfoGoals();
@@ -29,6 +29,7 @@ export class GoalFormPage {
     this.updateCarbSlider();
     this.updateFatSlider();
     this.updateProteinSlider();
+    this.calcuateDailyCalories();
   }
 
   savePersonInfoGoals(){
@@ -66,5 +67,21 @@ export class GoalFormPage {
       $('#protein-value').text(val + '%');
     })
   }
+
+  calcuateDailyCalories(){
+    this.personService.getPersonInfo().then(personData => {
+      var height = (personData.height_ft * 30.48) + (personData.height_in * 2.54);
+      var weight = personData.weight * .453592;
+      if(personData.sex === "male"){
+        this.dailyCalories =  Math.floor(((10 * weight) + (6.25*height) - (5 * personData.age) + 5) * personData.exercise_level);
+        console.log("Calories Male: ", this.dailyCalories);
+      }else{
+        this.dailyCalories = Math.floor(((10 * weight) + (6.25*height) - (5 * personData.age) - 161) * personData.exercise_level);
+        console.log("Calories Female: ", this.dailyCalories);
+      }
+    });
+  }
+
+  
 
 }

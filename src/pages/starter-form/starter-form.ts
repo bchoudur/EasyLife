@@ -29,14 +29,14 @@ export class StarterFormPage {
 
     var person: Person = {
       name: $('#name').val(),
-      age: $('#age').val(),
+      age: Number($('#age').val()),
       sex: $("#sex").val(),
-      height_ft: $("#height").val(),
-      height_in: $("#height-s").val(),
-      weight: $("#weight").val(),
-      exercise_level: $("#fitness").val(),
-      balance: $("#balance").val(),
-      allowance: $("#allowance").val(),
+      height_ft: Number($("#height").val()),
+      height_in: Number($("#height-s").val()),
+      weight: Number($("#weight").val()),
+      exercise_level: Number($("#fitness").val()),
+      balance: Number($("#balance").val()),
+      allowance: Number($("#allowance").val()),
 
       //Rest of values will get set on the next page
       weight_goal: "",
