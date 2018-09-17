@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PersonService } from '../../providers/person-service/person-service';
 import { UserProfilePage } from '../user-profile/user-profile';
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 
 /**
  * Generated class for the GoalFormPage page.
