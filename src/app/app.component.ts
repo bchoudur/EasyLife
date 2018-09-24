@@ -26,7 +26,7 @@ import { GoalFormPage } from '../pages/goal-form/goal-form';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = UserProfilePage;
+  rootPage: any = GoalFormPage;
 
   pages: Array<{title: string, component: any}>;
   

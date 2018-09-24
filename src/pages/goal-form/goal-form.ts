@@ -19,7 +19,11 @@ import * as $ from 'jquery';
 export class GoalFormPage {
 
   dailyCalories: number;
-
+  carbsG: number; //Carbs in grams
+  fatsG: number; //Fat in grams
+  proteinG: number; //Carbs in grams
+  sugarG: number;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, private personService: PersonService) {
     //this.savePersonInfoGoals();
   }
@@ -30,6 +34,8 @@ export class GoalFormPage {
     this.updateFatSlider();
     this.updateProteinSlider();
     this.calcuateDailyCalories();
+    this.calculateMacroNutrition();
+    
   }
 
   savePersonInfoGoals(){
@@ -42,8 +48,6 @@ export class GoalFormPage {
 
       this.personService.savePersonInfo(personData);
     });
-
-    //this.personService.savePersonInfo(person);
     // /this.navCtrl.push(UserProfilePage);
   }
 
@@ -80,6 +84,19 @@ export class GoalFormPage {
         console.log("Calories Female: ", this.dailyCalories);
       }
     });
+  }
+
+  calculateMacroNutrition(){
+    var carbPercent = Number($("#carb-percent").val())/100;
+    var fatPercent = Number($("#fat-percent").val())/100;
+    var proteinPercent = Number($("#fat-percent").val())/100;
+
+    this.carbsG = this.dailyCalories;
+    this.fatsG = (this.dailyCalories/9)*fatPercent;
+    this.proteinG = (this.dailyCalories/4)*proteinPercent;
+
+    console.log(this.carbsG);
+    
   }
 
   
